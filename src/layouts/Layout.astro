@@ -1,0 +1,26 @@
+---
+import '../styles/global.css' 
+import { env } from 'astro'
+const isDev = (import.meta.env.MODE === 'development')
+---
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{isDev && '[DEV] '} Mayer & Watt</title>
+	</head>
+	<body class="bg-gray-200">
+		<slot />
+	</body>
+</html>
+
+<style>
+	@reference '../styles/global.css';
+	html,
+	body {
+		@apply m-0 w-full h-full;
+	}
+</style>

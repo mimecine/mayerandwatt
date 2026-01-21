@@ -1,0 +1,49 @@
+---
+import Layout from "../layouts/Layout.astro";
+let productsSlice = [
+  {
+    name: "Aquamarine 11mm Emerald Cut H 5.75cts",
+    summary: "This is the summary for product 1.",
+    thumbnail: "https://mayer-and-watt.imgix.net/S235-018_PkTourm_7.5mm_Sq_EC_1.82cts_MSS_websafe_2.jpg?auto=compress%2Cformat&fit=clip&q=80&w=300&h=300",
+  },
+  {
+    name: "Mint Tourmaline 12mm Round H 5.22cts",
+    summary: "This is the summary for product 2.",
+    thumbnail: "https://mayer-and-watt.imgix.net/S235-019_Aqua_11mm_sqcush_5.75cts_AAS_websafe.jpg?auto=compress%2Cformat&fit=clip&q=80&w=800&h=800"},
+  {
+    name: "Pink Tourmaline 7.5 Sq Emerald Cut N 1.82cts",
+    summary: "This is the summary for product 3.",
+    thumbnail: "https://mayer-and-watt.imgix.net/S235-003_MintTourm_12mm_Round_5.22cts_Websafe.jpg?auto=compress%2Cformat&fit=clip&q=80&w=800&h=800"},
+];
+
+const products = [...productsSlice, ...productsSlice, ...productsSlice];
+
+export const prerender = false;
+---
+
+<Layout>
+  <section
+    class="order-sheet font-mono border border-gray-700 bg-gray-300 w-full lg:w-240 mx-auto mt-20 shadow-xl">
+    <div class="border-b border-gray-700 bg-gray-400 p-4">
+      <h1 class="text-6xl font-600">Order Sheet</h1>
+      <p>This is the order sheet page.</p>
+    </div>
+    {
+      products.map((product) => (
+        <div class="product-line grid grid-cols-4 border-b last:border-b-0 border-gray-700 p-0">
+          <div class="product-name p-2 border-r font-bold text-xl">{product.name}</div>
+          <div class="product-summary border-r p-2">{product.summary}</div>
+          <div class="product-thumbnail border-r p-2 flex items-center justify-end">
+			
+            <img
+              src={product.thumbnail}
+              alt={product.name}
+              class="border w-20 aspect-square"
+            />
+          </div>
+		  <div class="flex items-center justify-center"><div class="border"><input type="checkbox" class="w-20 h-20 accent-gray-100 m-0 p-0 m-0"></div></div>
+        </div>
+      ))
+    }
+  </section>
+</Layout>

@@ -1,0 +1,33 @@
+{
+	"main": "@astrojs/cloudflare/entrypoints/server",
+	"name": "mayerandwatt",
+	"compatibility_date": "2026-01-13",
+	"compatibility_flags": [
+		"nodejs_compat",
+		"global_fetch_strictly_public"
+	],
+	"assets": {
+		"binding": "ASSETS",
+		"directory": "./dist"
+	},
+	"observability": {
+		"enabled": true
+	},
+	"kv_namespaces": [
+		{
+			"binding": "SESSION",
+			"id": "060afe7a5cf64c45aa12cb152cc15041",
+			"remote": true
+		},
+		{
+			"binding": "SESSION_MAYERANDWATT",
+			"id": "c043590d6e844c84ad8cfb052471018c",
+			"remote": true
+		},
+		{
+			"binding": "SERVICE_MAYERANDWATT",
+			"id": "5b57fa40f5544b0aae43f9be8d5463f2",
+			"remote": true
+		}
+	]
+}
