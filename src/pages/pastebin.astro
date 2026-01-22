@@ -1,6 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { env } from "cloudflare:workers";
+export const prerender = false;
+
 let error = null;
 
 let res = await fetch("https://www.postb.in/1769101939685-9943302432075", {
