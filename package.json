@@ -5,16 +5,19 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "wrangler preview": "astro preview",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
     "@astrojs/cloudflare": "13.0.0-beta.0",
-    "@tailwindcss/vite": "^4.1.18",
-    "@zohocrm/nodejs-sdk-2.0": "^6.1.0",
-    "@zohocrm/nodejs-sdk-8.0": "^3.0.0",
     "astro": "6.0.0-beta.1",
     "tailwindcss": "^4.1.18"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.19",
+    "@tailwindcss/vite": "^4.1.18",
+    "@types/alpinejs": "^3.13.11",
+    "@astrojs/alpinejs": "^0.4.9",
+    "alpinejs": "^3.15.4"
   }
 }

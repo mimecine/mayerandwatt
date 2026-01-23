@@ -1,6 +1,5 @@
 ---
 import '../styles/global.css' 
-import { env } from 'astro'
 const isDev = (import.meta.env.MODE === 'development')
 ---
 <!doctype html>
@@ -12,7 +11,7 @@ const isDev = (import.meta.env.MODE === 'development')
 		<meta name="generator" content={Astro.generator} />
 		<title>{isDev && '[DEV] '} Mayer & Watt</title>
 	</head>
-	<body class="bg-gray-200">
+	<body class="bg-gray-200 container min-h-screen flex flex-col">
 		<slot />
 	</body>
 </html>
